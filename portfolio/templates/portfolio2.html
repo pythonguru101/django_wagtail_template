@@ -1,0 +1,391 @@
+{% load wagtailcore_tags static wagtailimages_tags %}
+{% block extra_css %}
+  <!--=============== css  ===============-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/color.css' %}">
+{% endblock %}
+{% block content %}
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>TheSide - Creative  Responsive Architecture  Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    </head>
+    <body>
+        <!--Loader -->
+        <div class="loader2">
+            <div class="loader loader_each"><span></span></div>
+        </div>
+        <!-- loader end  -->
+        <!-- main start  -->
+        <div id="main">
+            <!-- header start  -->
+            <header class="main-header">
+                <a href="/" class="header-logo ajax"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                <!-- sidebar-button --> 
+                <!-- nav-button-wrap-->
+                <div class="nav-button-wrap">
+                    <div class="nav-button">
+                        <span  class="nos"></span>
+                        <span class="ncs"></span>
+                        <span class="nbs"></span>
+                        <div class="menu-button-text">Menu</div>
+                    </div>
+                </div>
+                <!-- nav-button-wrap end-->
+                <!-- sidebar-button end-->  
+                <!--  navigation --> 
+                <div class="header-contacts">
+                    <ul>
+                        <li><span> Call </span> <a href="tel:+4(897)56412322">+4(897)56412322</a></li>
+                        <li><span> Write </span> <a href="mailto:theside@domain.com">theside@domain.com</a></li>
+                    </ul>
+                </div>
+                <!-- navigation  end -->            
+            </header>
+            <!-- header end -->
+            <!-- left-panel -->
+            <div class="left-panel">
+                <div class="horizonral-subtitle"><span><strong></strong></span></div>
+                <div class="left-panel_social">
+                    <ul >
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- left-panel end -->
+            <!-- share-button -->
+            <div class="share-button showshare">
+                <span>Share</span>
+            </div>
+            <!-- share-button end -->
+            <!-- wrapper  -->	
+            <div id="wrapper">
+                <!-- content-holder  -->	
+                <div class="content-holder" data-pagetitle="Portfolio Horizontal 2">
+                    <!-- nav-holder-->
+                    <div class="nav-holder but-hol">
+                        <div class="nav-scroll-bar-wrap fl-wrap">
+                            <div class="nav-search">
+                                <form action="#" class="searh-inner fl-wrap">
+                                    <input name="se" id="se" type="text" class="search fl-wrap" placeholder="Search.." value="Search..." />
+                                    <button class="search-submit color-bg" id="submit_btn"><i class="fal fa-search"></i> </button>
+                                </form>
+                            </div>
+                            <!-- nav -->
+                            <nav class="nav-inner" id="menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Home</a>
+                                        <!--level 2 -->
+                                        <ul>
+                                            <li><a href="/" class="ajax act-link">Half Slider</a></li>
+                                            <li><a href="/home/multi_slide/" class="ajax">Multi Slideshow</a></li>
+											                      <li><a href="/home/carousel" class="ajax">Carousel</a></li>
+                                            <li><a href="/home/impulse_image" class="ajax">Impulse Image</a></li>
+                                            <li><a href="/home/fullscreen_image" class="ajax">Fullscreen  Image</a></li>
+                                            <li><a href="/home/fullscreen_slide" class="ajax">Fullscreen  Slider</a></li>
+                                            <li><a href="/home/fullscreen_slide_show" class="ajax">Fullscreen  Slideshow</a></li>
+                                            <li><a href="/home/video" class="ajax">Video</a></li>
+                                        </ul>
+                                        <!--level 2 end -->
+                                    </li>
+                                    <li>
+                                        <a href="#">About</a>
+                                        <!--level 2 -->
+                                        <ul>
+                                            <li><a href="/about/studio" class="ajax">About Studio</a></li>
+                                            <li><a href="/about/personal" class="ajax">About Personal</a></li>
+                                        </ul>
+                                        <!--level 2 end -->
+                                    </li>
+                                    <li>
+                                        <a href="#" class="act-link">Portfolio</a>
+                                        <!--level 2 -->
+                                        <ul>
+                                            <li><a href="/portfolio/fullscreen_grid/" class="ajax">Fullscreen Grid</a></li>
+                                            <li><a href="/portfolio/horizontal2/" class="ajax">Horizontal 2 Columns</a></li>
+                                            <li><a href="/portfolio/horizontal3/" class="ajax">Horizontal 3 Columns</a></li>
+                                            <li><a href="/portfolio/horizontal1/" class="ajax">Horizontal 1 Column</a></li>
+                                            <li><a href="/portfolio/boxed_grid/" class="ajax">Boxed Grid</a></li>
+                                            <li><a href="/portfolio/column_grid/" class="ajax">Column Grid</a></li>
+                                            <li><a href="/portfolio/column_grid2/" class="ajax">Column Grid 2</a></li>
+                                            <li>
+                                                <a href="#">Single</a>
+                                                <!--level 3 -->
+                                                <ul>
+                                                    <li><a href="/portfolio/style1/" class="ajax">Style 1</a></li>
+                                                    <li><a href="/portfolio/style2/" class="ajax">Style 2</a></li>
+                                                    <li><a href="/portfolio/style3/" class="ajax">Style 3</a></li>
+                                                    <li><a href="/portfolio/style4/" class="ajax">Style 4</a></li>
+                                                    <li><a href="/portfolio/style5/" class="ajax">Style 5</a></li>
+                                                    <li><a href="/portfolio/style6/" class="ajax">Style 6</a></li>
+                                                    <li><a href="/portfolio/style7/" class="ajax">Style 7</a></li>
+                                                </ul>
+                                                <!--level 3 end -->
+                                            </li>
+                                        </ul>
+                                        <!--level 2 end -->
+                                    </li>
+                                    <li><a href="/service/service/" class="ajax">Services</a></li>
+                                    <li><a href="/contacts/contacts/" class="ajax">Contacts</a></li>
+                                    <li><a href="/blog/blog/" class="ajax">Blog</a></li>
+                                </ul>
+                            </nav>
+                            <!-- nav end-->
+                            <!--lang-links-->
+                            <div class="lang-links fl-wrap">
+                                <a href="#" class="act-leng">EN</a><a href="#">FR</a> 
+                            </div>
+                            <!--lang-links end-->
+                        </div>
+                        <!--nav-social-->
+                        <div class="nav-social">
+                            <span class="nav-social_title">Follow us : </span>
+                            <ul >
+                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                            </ul>
+                        </div>
+                        <!--nav-social end -->
+                    </div>
+                    <div class="nav-overlay">
+                        <div class="element"></div>
+                    </div>
+                    <!-- nav-holder end -->        
+                    <!-- fixed-filter-panel -->  					
+                    <div class="fixed-filter-panel bot-element fw-panel hor-mob-filter">
+                        <div class="fixed-filter-panel_title color-bg hor-mob-filter_btn">
+                            Works Filter <i class="fal fa-long-arrow-right"></i>
+                        </div>
+                        <div class="gallery-filters">
+                            <a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">All Works</a>
+                            <a href="#" class="gallery-filter " data-filter=".houses">Houses</a>
+                            <a href="#" class="gallery-filter" data-filter=".apartments">Apartments</a>
+                            <a href="#" class="gallery-filter" data-filter=".interior">Interior</a>
+                            <a href="#" class="gallery-filter" data-filter=".design">Design</a>
+                        </div>
+                        <div class="count-folio round-counter">
+                            <div class="num-album"></div>
+                            <div class="all-album"></div>
+                        </div>
+                        <div class="scroll-down-wrap">
+                            <div class="mousey">
+                                <div class="scroller"></div>
+                            </div>
+                            <span>Scroll or  Swipe</span>
+                        </div>
+                    </div>
+                    <!-- fixed-filter-panelend -->  	
+                    <!--horizontal-grid   -->   
+                    <div class="horizontal-grid-wrap  fl-wrap  ">
+                        <!-- portfolio start -->
+                        <div   id="portfolio_horizontal_container" class="two-ver-columns">
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item interior">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Norway House <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item apartments">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Theatre de Stoep <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item interior design">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Trinity River Audubon Centre <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item houses design">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">New Acropolis Museum<i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item apartments">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">West 57th Street <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item houses design">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Petronas Tower<i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item apartments">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">One World Trade Center<i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item interior">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Spire Edge <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item apartments design">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">White Walls <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item interior houses ">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Big House <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item apartments">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Pen Tower <i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->
+                            <!-- portfolio_item-->
+                            <div class="portfolio_item houses design">
+                                <div class="grid-item-holder">
+                                    <img  src="{% static 'img/folio/1.jpg' %}"    alt="">
+                                    <div class="grid-det">
+                                        <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
+                                        <div class="grid-det-item">
+                                            <a href="portfolio-single.html" class="ajax grid-det_link">Wood River Ships Center<i class="fal fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pr-bg"></div>
+                            </div>
+                            <!-- portfolio_item end-->                            
+                        </div>
+                        <!-- portfolio end -->
+                    </div>
+                    <!--horizontal-grid end -->       
+                    <!-- share-wrapper-->  
+                    <div class="share-wrapper">
+                        <div class="close-share-btn"><i class="fal fa-long-arrow-left"></i> Close</div>
+                        <div class="share-container fl-wrap  isShare"></div>
+                    </div>
+                    <!-- share-wrapper  end -->  
+                </div>
+                <!-- content-holder end -->	
+            </div>
+            <!-- wrapper end -->
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        {% block extra_js %}
+          <script type="text/javascript" src="{% static 'js/theside/jquery.min.js' %}"></script>
+          <script type="text/javascript" src="{% static 'js/theside/plugins.js' %}"></script>
+          <script type="text/javascript" src="{% static 'js/theside/core.js' %}"></script>
+          <script type="text/javascript" src="{% static 'js/theside/scripts.js' %}"></script>
+        {% endblock %}
+    </body>
+</html>
+{% endblock %}

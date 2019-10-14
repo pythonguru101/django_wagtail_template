@@ -1,0 +1,325 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title></title>
+  <style type="text/css">
+    @media only screen and (max-width: 600px) {
+      table {
+        max-width: 100% !important;
+      }
+
+      .image {
+        height: auto !important;
+        max-width: 600px !important;
+        width: 100% !important;
+      }
+
+      .logo-image {
+        max-width: 500px !important;
+        height: auto !important;
+      }
+
+      h1 {
+        font-size: 30px !important;
+      }
+
+      .spacer {
+        height: 30px !important;
+      }
+
+      .mobile-spacer {
+        height: 15px !important;
+        display: block !important;
+      }
+
+      .mobile-padding {
+        padding: 0 20px !important;
+      }
+
+      .item-spacer {
+        height: 40px !important;
+      }
+
+      .cell {
+        width: 100% !important;
+      }
+
+      .cell--half {
+        width: 48% !important;
+      }
+
+      .sm-logo {
+        height: 18px !important;
+      }
+
+      .sm-cell {
+        width: 6% !important;
+      }
+
+      .footer p {
+        font-size: 15px !important;
+      }
+
+      .title {
+        font-size: 18px !important;
+      }
+
+      .title--large {
+        font-size: 30px !important;
+      }
+
+      .heading {
+        font-size: 15px !important;
+      }
+    }
+
+    @media only screen and (max-width: 450px) {
+
+      .body-text {
+        font-size: 16px !important;
+      }
+
+      .logo-image {
+        max-width: 400px !important;
+        height: auto;
+      }
+    }
+
+    .body-text a {
+      color: #000000;
+      text-decoration-color: #000000;
+      font-weight: bold;
+    }
+
+    table p a, table p a:active, table p a:visited {
+      color: #000;
+    }
+
+  </style>
+</head>
+<body style="padding:0;margin:0;">
+<table border="0" cellpadding="0" cellspacing="0" width="600" align="center">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mobile-padding">
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td height="20"></td>
+              </tr>
+              <tr>
+                <td valign="top" width="100%" style="text-align: center;">
+                  <a href="https://www.joannaham.com" style="border:none;">
+                    <img src="https://www.joannaham.com/media/images/email_logo.original.png" alt="The Wrong Shop"
+                         width="350" height="88" class="logo-image"/>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom: 1px;"></td>
+              </tr>
+              <tr>
+                <td height="40"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td style="font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;font-weight:bold;">
+                  Thank you for shopping with Joanna Ham.
+                </td>
+              </tr>
+              <tr>
+                <td height="20"></td>
+              </tr>
+              <tr>
+                <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                  Order number: {{ order.id }}<br/>
+                  Order date: {{ order.order_created | date: "j F Y" }}
+                </td>
+              </tr>
+              <tr>
+                <td height="20"></td>
+              </tr>
+              <tr>
+                <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                  Please check the details below are correct, if you need to make any changes just drop us a line at <a
+                    style="color:#000;" href="mailto:info@joannaham.com">info@joannaham.com</a>.
+                </td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                  Once your order is on the way, we’ll send you a confirmation email.
+                </td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                  Best wishes,<br/>Joanna
+                </td>
+              </tr>
+              <tr>
+                <td height="30"></td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="font-weight: bold;font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                    Order Summary</p>
+                </td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid #000"></td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">{% for order_item in
+                    order.order_items.all %}
+                    <tr>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                        {{ order_item.quantity }} × {{ order_item.product.title }}{% if order_item.attribute %} ({{
+                        order_item.attribute }}){% endif %}
+                      </td>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;">
+                        &pound;{{ order_item.price | floatformat:-2 }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" height="5"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><img
+                          src="https://www.joannaham.com/media/images/Lust_square.2e16d0ba.fill-500x500.jpg"
+                          style="width:90px;height: auto;"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" height="{%if forloop.last %}25{% else %}15{% endif %}"></td>
+                    </tr>
+                    {% endfor %}
+
+                    <tr>
+                      <td colspan="2" style="border-bottom:1px solid #000"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" height="10"></td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                        Shipping charged
+                      </td>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;">
+                        &pound;{{ order.shipping_charged }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;font-weight:bold;">
+                        Total
+                      </td>
+                      <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;font-weight:bold;">
+                        &pound;{{ order.order_total }}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td height="50"></td>
+              </tr>
+            </table>
+
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td>
+                  <p style="font-weight: bold;font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+                    Shipping Address</p>
+                </td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid #000"></td>
+              </tr>
+              <tr>
+                <td height="10"></td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="font-weight: normal;font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:left;">
+                    {{ order.shipping_name }}<br/>
+                    {{ order.shipping_address1 }}{%if order.shipping_address2 }}<br/>
+                    {{ order.shipping_address2 }}{% endif %}{% if order.shipping_address3 %}<br/>
+                    {{ order.shipping_address3 }}{% endif %}{% if order.shipping_state %}<br/>
+                    {{ order.shipping_city }}, {{ order.shipping_state }} {{ order.shipping_postcode }}{% else %}
+                    {{ order.shipping_city }} {{ order.shipping_postcode }}{% endif %}<br/>
+                    {{ order.shipping_country }}</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="30"></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="line-height: 1.4em;"
+             class="footer mobile-padding">
+        <tr style="border-top-color: #000;border-top-width: 4px;height: 20px;">
+          <td style="border-top: 4px solid #000;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="50%" align="left" class="cell">
+              <tr>
+                <td valign="top">
+                  <a href="https://www.instagram.com/Joanna.ham/" style="border:none;text-decoration:none;"><img
+                      src="https://joannaham.com/static/img/instagram_black.svg" style="width:25px;height: auto;"/></a>
+                  <a href="https://twitter.com/Joanna_ham_" style="border:none;text-decoration:none;"><img
+                      src="https://joannaham.com/static/img/twitter_black.svg" style="width:25px;height: auto;"/></a>
+                  <a href="https://the-dots.com/users/joanna-ham-471690" style="border:none;text-decoration:none;"><img
+                      src="https://joannaham.com/static/img/thedots_black.svg" style="width:25px;height: auto;"/></a>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="50%" align="left" class="cell">
+              <tr>
+                <td valign="top">
+                  <p style="font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif; font-size: 14px;padding:0;padding-bottom:15px;margin:0;line-height: 1.38em;text-align:right;">
+                    <a style="text-decoration: none;color:#000000;text-decoration-color: #000000;"
+                       href="http://eepurl.com/gBDleT">Subscribe to News</a><br/>
+                    <a style="text-decoration: none;color:#000000;text-decoration-color: #000000;"
+                       href="https://www.joannaham.com/faq/">FAQs</a>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td height="40"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

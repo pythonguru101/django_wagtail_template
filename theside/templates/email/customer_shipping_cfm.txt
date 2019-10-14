@@ -1,0 +1,36 @@
+Dear {{order.billing_name}},
+
+Your Wrong Shop order no. WS{{order.id}} has been shipped to:
+
+{{order.shipping_name}}
+{{order.shipping_address1}}{%if order.shipping_state%}
+{{order.shipping_state}}
+{{order.shipping_city}} {{order.shipping_postcode}}{%else%}
+{{order.shipping_city}} {{order.shipping_postcode}}{%endif%}
+{{order.shipping_country}}
+
+{% comment %}
+{%if order.shipping_tracking_code %}Shipping method: Interparcel
+Shipping tracking code: {{order.shipping_tracking_code}}
+You can track your parcel here: http://www.interparcel.com{%else%}
+Shipping Method: Royal Mail First Class/International{%endif%}
+{% endcomment %}
+
+
+Delivery times:
+United Kingdom: 1-2 days
+Outside the UK: 2-7 days
+Delivery times are estimates, some parcels can take longer to arrive.
+
+If you have any questions about your order,
+please don't hesitate to contact us at info@thewrongshop.co.uk.
+
+Best wishes,
+
+The Wrong Shop
+
+____________________________________________________
+
+The Wrong Shop, 33b Laurison Road, London E9 7EY
+info@thewrongshop.co.uk
+http://www.thewrongshop.co.uk

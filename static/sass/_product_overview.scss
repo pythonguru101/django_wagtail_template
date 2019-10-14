@@ -1,0 +1,32 @@
+.product-overview {
+    .each-product {
+        margin-bottom: 40px;
+        
+        .inner-liner {
+            position: relative;
+            img {
+                width: 100%;
+                height: auto;
+                // padding: 6px;
+            }
+            h2 {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                color: #fff;
+                margin: 0;
+            }
+            .product-title {
+                display: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(58, 130, 94, 0.8); // or hsla(0, 0%, 100%, 0.5);
+            }
+        }
+    }
+}

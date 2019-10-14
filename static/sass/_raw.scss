@@ -1,0 +1,65 @@
+/*
+font-family:'NeueHaasGroteskText W01';
+font-family:'NHaasGroteskTXW01-56It';
+font-family:'ParkinsElectraW01-Regul';
+font-family:'ParkinsElectraW01-Itali';
+font-family:'NHaasGroteskDSW01-45Lt';
+font-family:'NHaasGroteskDSW01-46LtI';
+font-family:'NHaasGroteskDSW01-35XLt';
+font-family:'Helvetica Neue LT W05_45 Light';
+font-family:'Neue Haas Unica W01 Light';
+font-family:'Neue Haas Grotesk Disp W0535XL';
+font-family:'Neue Haas Grotesk Disp W05_45L';
+font-family:'Neue Haas Unica W01 Regular';
+font-family:'AvenirNextLTW01-Regular';
+font-family:'AvenirNextLTW01-Italic';
+font-family:'AvenirNextLTW01-Medium';
+
+
+*/
+
+html{
+	-moz-osx-font-smoothing: grayscale;
+}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+a {
+    text-decoration: none;
+}
+body,
+html{
+	margin:0!important;
+	padding:0!important;
+}
+body {
+    font-family:'AvenirNextLTW01-Regular', Arial, Helvetica, sans-serif;
+}
+a, a:hover {
+    color: #000;
+}
+/* Box Model Hack */
+* {
+	-moz-box-sizing: border-box; /* Firexfox */
+	-webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+	box-sizing: border-box; /* IE */
+}
+html{
+	box-sizing: border-box;
+}
+a:hover {
+    text-decoration: none;
+}
+*,
+*:before,
+*:after {
+  	box-sizing: inherit;
+}
+h1, h2, h3, h3 {
+    font-weight: normal;
+    font-style: normal;
+}

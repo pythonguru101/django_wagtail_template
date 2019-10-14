@@ -1,0 +1,292 @@
+.page-liner.checkout-page {
+    padding-bottom: 100px;
+    @include breakpoint (mobile){
+        padding-bottom: 80px;
+    }
+}
+.checkout-form {
+    .summary-payment {
+        @include breakpoint (tablet){
+            margin-top: 40px;
+        }
+    }
+    .pad-right{
+        padding-right: 55px;
+        @include breakpoint (tablet){
+            padding-right: 20px;
+        }
+    }
+    .pad-left{
+        padding-left: 55px;
+        @include breakpoint (tablet){
+            padding-left: 20px;
+        }
+    }
+    .checkout-error {
+        font-size:$medium;
+        color: red;
+        margin-bottom: 40px;
+    }
+    .error {
+        input::placeholder{
+            color: red;
+        }
+    }
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+        .input-checkout {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px dotted #000;
+            width: 100%;
+            padding: 0 0 4px 1px;
+            font-size: $medium;
+            @include breakpoint(mobile){
+                font-size: $small;
+            }
+            margin-bottom: 18px;
+        }
+        h2 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 6px;
+            font-size: $large;
+            @include breakpoint(mobile){
+                font-size: $medium;
+            }
+            margin: 0 0 18px 0;
+        }
+    }
+    fieldset.name-address,
+    fieldset.billing,
+    fieldset.country,
+    fieldset.summary,
+    fieldset#shipping-address {
+        label {
+            display: none;
+        }
+        margin-bottom: 20px;
+    }
+    fieldset.country,
+    fieldset.promotion {
+        h2 {
+            border: none;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+    }
+    #promotion-row {
+        display: none;
+    }
+    .select-country {
+        margin-top: 10px;
+        font-size: $medium;
+        @include breakpoint(tablet){
+            font-size: $small;
+            background-position: right 12px top 8px;
+            background-size: auto;
+            background-size: 23px auto;
+        }
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        background: url(../img/down_arrow.svg) no-repeat;
+        background-position: right 12px top 10px;
+        background-size: auto;
+        background-size: 25px auto;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #000;
+        padding: 9px 6px 9px 6px;
+        -webkit-border-radius: 0px; 
+    }
+    .right {
+        text-align: right;
+    }
+    .summary {
+        font-size: $small;
+        .summary-items {
+            .row {
+                padding-bottom: 8px;
+            }
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #000;
+            margin-bottom: 20px;
+            a {
+                color: grey;
+            }
+        }
+        .summary-items.totals {
+            border-bottom: 1px solid #000;
+        }
+        .total {
+            font-size: $medium;
+        }
+    }
+    .card-details {
+        margin-top: 40px;
+        input::placeholder {
+            color: $brown;
+        }
+        .date-cvc {
+            font-size: $medium;
+            label {
+                display: block;
+                font-size: $medium;
+                margin-bottom: 8px;
+                color: grey;
+                a {
+                    color: grey;
+                    font-size: $small;
+                }
+            }
+            input {
+                border: 1px solid #000;
+                padding: 5px 8px;
+            }
+            .form-row {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    #shipping-address {
+        margin-top: 20px;
+    }
+
+    // place order
+    .btn--buy {
+        padding: 9px 17px;
+        width:150px;
+        height: 50px;
+        text-align: center;
+        font-size: $medium;
+        background: silver;
+        border: none;
+        margin-top: 20px;
+    }
+
+    // custom check boxes
+    .checkboxes.offset {
+        margin-top: 20px;
+    }
+    .custom-check.large {
+        font-size: $medium;
+        @include breakpoint (tablet) {
+            font-size: $small;
+            padding-top: 4px;
+        }
+        padding-top: 1px;
+    }
+
+    .custom-check {
+        font-size: $small;
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        padding-top: 5px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* Hide the browser's default checkbox */
+        a {
+            text-decoration: underline;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
+        
+        /* On mouse-over, add a grey background color */
+        .custom-check:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        
+        /* When the checkbox is checked, add a blue background */
+        input:checked ~ .checkmark {
+            background-color: $brown;
+        }
+        
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        /* Show the checkmark when checked */
+        input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        /* Style the checkmark/indicator */
+        .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 8px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    } 
+}
+
+.btn__spinner{
+	// position:absolute;
+	// width:100%;
+    // height:100%;
+    z-index:10;
+    width: 150px;
+    height: 50px;
+    background: silver;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    display:none;
+    .spinner {
+        border: 5px solid gray; /* Light grey */
+        border-top: 5px solid #000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left:50px;
+        top: 5px;
+        // opacity:0.75;
+        @include animate-prefix(animation, spin 0.8s linear infinite);
+        @include breakpoint(smallest){
+            margin-top: 3px;
+            margin-left: 33px;
+            width: 35px;
+            height: 35px;
+        }
+        @keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+        }
+    }
+}

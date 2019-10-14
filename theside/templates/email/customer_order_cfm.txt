@@ -1,0 +1,43 @@
+Dear {{order.billing_name}},
+
+Thank you for your order.
+Your order number is LA{{order.id}}.
+
+Below is your order summary:
+{% for order_item in order.order_items.all %}{% if order_item.product %}
+{{order_item.quantity}} x {{order_item.product.title}} – £{{order_item.product.base_price|floatformat:2}}{% endif %}{% if order_item.publication %}
+{{order_item.quantity}} x {{order_item.publication.title}} – £{{order_item.publication.base_price|floatformat:2}}
+{% endif %}
+{% endfor %}
+{% if is_products_only %}{% elif is_events_only %}
+Please note that we do not post tickets. Your name was added to a guest list.
+To gain access to the event, please bring a copy of this email (printed, or on your mobile) or an ID.
+{% else %}{% endif %}
+Order Total: £{{order.total_price|floatformat:2}}{%if not is_events_only%}
+Your order total includes £{{order.shipping_charged|floatformat:2}} shipping.{%endif%}
+
+Billing details:
+{{order.billing_name}}
+{{order.billing_address1}}{%if order.billing_state%}
+{{order.billing_state}}
+{{order.billing_city}} {{order.billing_postcode}}{%else%}
+{{order.billing_city}} {{order.billing_postcode}}{%endif%}
+{{order.billing_country}}
+
+Your delivery address is:
+{{order.shipping_name}}
+{{order.shipping_address1}}{%if order.shipping_state%}
+{{order.shipping_state}}
+{{order.shipping_city}} {{order.shipping_postcode}}{%else%}
+{{order.shipping_city}} {{order.shipping_postcode}}{%endif%}
+{{order.shipping_country}}
+
+{%if not is_events_only%}We will ship your order as soon as possible.{%endif%}
+If any of the details above are incorrect, or if you have any questions
+about your order please contact info@fifthman.com.
+
+
+Lynch Architects
+
+info@fifthman.com
+www.fifthman.polimekanos.com

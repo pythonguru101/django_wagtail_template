@@ -1,0 +1,87 @@
+
+.footer-wrapper {
+    .content {
+        border-top: 6px solid #000;
+    }
+    width: 100%;
+    min-height: 250px;
+    p, ul, h1, h2, h3 {
+        font-size: 12px;
+        @include breakpoint (mobile) {
+            font-size: 10px;
+            text-indent: -10px;
+            padding-left: 10px;
+        }
+        line-height: 1.6em;
+        margin: 0;
+    }
+    .footer {
+        margin: 0 auto;
+        margin-top: 20px;
+        @include breakpoint (mobile) {
+            max-width: 400px;
+        }
+    }
+    .mail {
+        text-align: right;
+        font-size: 15px;
+        padding-bottom: 60px;
+        @include breakpoint (tablet) {
+            font-size: 14px;
+            background-size: 40px auto;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            text-align: left;
+        }
+        a { 
+            margin-left: 30px;
+            @include breakpoint (tablet) {
+                margin-right: 20px;
+                margin-left: 0px;
+            }
+        }
+    }
+    ul {
+        list-style-type: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .social-media {
+        li {
+            display:inline;
+        }
+        a {
+            width: 25px;
+            height: 25px;
+            margin-right: 0px;
+            margin-right: 5px;
+        }
+    }
+}
+.footer-wrapper.black {
+    p, ul, h1, h2, h3 {
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+    a {
+        color: #FFF;
+    }
+    .social-media a.instagram {
+        background: url('../img/instagram_white.svg') no-repeat;
+    }
+    .social-media a.pinterest {
+        background: url('../img/pinterest_white.svg') no-repeat;
+    }
+    .social-media a.linkedin {
+        background: url('../img/linkedin_white.svg') no-repeat;
+    }
+    .social-media a.twitter {
+        background: url('../img/twitter_white.svg') no-repeat;
+    }
+    .mail {
+        background-image: url('../img/nl-white.svg');
+    }
+}

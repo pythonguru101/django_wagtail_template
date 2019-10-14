@@ -1,0 +1,21 @@
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// general page content layout
+.page-content {
+    margin-top: 75px;
+    padding-bottom: 90px;
+    min-height: 1000px;
+    @include breakpoint (mobile){
+        margin-top: 70px;
+    }
+}
+.page-liner {
+    width: 85%;
+    margin: 0 auto;
+    @include breakpoint (tablet){
+        width: 100%;
+    }
+}

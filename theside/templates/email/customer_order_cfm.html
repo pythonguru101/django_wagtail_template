@@ -1,0 +1,138 @@
+{% extends 'email/base.html' %}
+
+{% load wagtailimages_tags static wagtailcore_tags %}
+
+{% block content %}
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td style="font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;font-weight:bold;">
+      Thank you for shopping with Joanna Ham.
+    </td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+      Order number: {{ order.id }}<br />
+      Order date: {{ order.order_created | date:"j F Y"}}
+    </td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+        Please check the details below are correct, if you need to make any changes just  drop us a line at <a style="color:#000;" href="mailto:info@joannaham.com">info@joannaham.com</a>.
+    </td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+        Once your order is on the way, we’ll send you a confirmation email.
+    </td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td style="font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+        Best wishes,<br />Joanna
+    </td>
+  </tr>
+  <tr>
+    <td height="30"></td>
+  </tr>
+  <tr>
+    <td>
+      <p style="font-weight: bold;font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">Order Summary</p>
+    </td>
+  </tr>
+  <tr>
+      <td height="10"></td>
+  </tr>
+  <tr>
+      <td style="border-bottom:1px solid #000"></td>
+  </tr>
+  <tr>
+      <td height="10"></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">{% for order_item in order.order_items.all %}
+        <tr>
+          <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">{{ order_item.quantity }} × {{ order_item.product.title }}{% if order_item.product.print_type %} {{order_item.product.print_type|safe}}{% elif order_item.product.parent_series.print_type %} {{order_item.product.parent_series.print_type|safe}}{% endif %}{% if order_item.attribute %} ({{ order_item.attribute }}){% endif %}</td>
+          <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;">&pound;{{ order_item.price | floatformat:-2 }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" height="8"></td>
+        </tr>
+        <tr>
+          <td colspan="2">{% image order_item.product.thumbnail fill-450x450 as thumbnail %}
+            <img src="http://joannaham.com{{ thumbnail.url }}" style="width:90px;height: auto;">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" height="{%if forloop.last %}25{% else %}15{% endif %}"></td>
+        </tr>{% endfor %}
+
+        <tr>
+            <td colspan="2" style="border-bottom:1px solid #000"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="10"></td>
+          </tr>
+        <tr>
+          <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">Shipping charged</td>
+          <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;">&pound;{{ order.shipping_charged | floatformat:-2 }}</td>
+        </tr>
+        <tr>
+          <td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;font-weight:bold;">Total</td>
+          <!--<td style="font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:right;font-weight:bold;">&pound;{{ order.order_total | floatformat:-2 }}</td>-->
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="50"></td>
+  </tr>
+</table>
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+      <td>
+      <p style="font-weight: bold;font-style:normal;margin:0;padding:0;font-size:19px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;">
+          Shipping Address</p>
+      </td>
+  </tr>
+  <tr>
+      <td height="10"></td>
+  </tr>
+  <tr>
+      <td style="border-bottom:1px solid #000"></td>
+  </tr>
+  <tr>
+      <td height="10"></td>
+  </tr>
+  <tr>
+      <td>{% if order.shipping_postcode %}
+      <p style="font-weight: normal;font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:left;">{{ order.shipping_name }}<br/>
+          {{ order.shipping_address1 }}{% if order.shipping_address2 %}<br />
+          {{ order.shipping_address2 }}{% endif %}{% if order.shipping_address3 %}<br />
+          {{ order.shipping_address3 }}{% endif %}{% if order.shipping_state %}<br/>
+          {{ order.shipping_city }}, {{ order.shipping_state }} {{ order.shipping_postcode }}{% else %}
+          {{ order.shipping_city }} {{ order.shipping_postcode }}{% endif %}<br/>
+          {{ order.shipping_country }}</p>{% else %}
+      <p style="font-weight: normal;font-style:normal;margin:0;padding:0;font-size:15px;font-family: 'AvenirNextLTW01-Regular', Arial, Verdana, sans-serif;line-height: 1.4em;text-align:left;">{{ order.shipping_name }}<br/>
+        {{ order.billing_address1 }}{% if order.billing_address2 %}<br />
+        {{ order.billing_address2 }}{% endif %}{% if order.billing_address3 %}<br />
+        {{ order.billing_address3 }}{% endif %}{% if order.billing_state %}<br/>
+        {{ order.billing_city }}, {{ order.billing_state }} {{ order.billing_postcode }}{% else %}
+        {{ order.billing_city }} {{ order.billing_postcode }}{% endif %}<br/>
+        {{ order.shipping_country }}</p>{% endif %}
+      </td>
+  </tr>
+  </table>
+{% endblock %}

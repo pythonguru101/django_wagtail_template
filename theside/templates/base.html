@@ -1,0 +1,135 @@
+{% load static wagtailuserbar %}
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" lang="en" class="no-js">
+    <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% with self.get_site.site_name as site_name %}{% if site_name %} &larr; {{ site_name }}{% endif %}{% endwith %}{% endblock %}</title>{% if page.search_description %}
+        <meta name="description" content="{{page.search_description|safe}}" />{% endif %}
+        <!--<script type="text/javascript" src="//js.stripe.com/v3/"></script>-->
+        <script type="text/javascript" src="{% static 'js/libs/jquery-3.4.1.min.js' %}"></script>
+        {% block extra_css %}{% endblock %}
+        <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/e5edec3d-7393-4383-b124-49bd5a66c861.css"/>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}"/>{% if not user.is_authenticated %}
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-27123159-1']);
+          _gaq.push(['_trackPageview']);
+     
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>{% endif %}
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+    
+      <div class="navigation">
+        <div class="container">
+          <div class="content">
+            <h1><a href="/">Joanna Ham</a></h1>
+            <div class="menu_trigger">
+                <a href="#">Menu</a>
+              </div>
+              {% block basket %}
+              <div class="homepage-basket">{% with cart.get_status as cart_status %}
+                {% block homepage-basket-override %}{% if cart_status.total_quantity %}<a href="#" onClick="showCart();return false;">{% endif %}{% endblock %}
+                  <div id="widget">
+                      {% block cart-widget %}{% include 'home/cart_status.html' %}{% endblock %}
+                  </div>
+                {% if cart_status.total_quantity %}</a>{% endif %}
+              {% endwith %}</div>
+              {% endblock %}
+          </div>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu">
+          <h2><a href="/">Joanna Ham</a></h2>
+          <ul class="prodcuts">{% for page in published_series.all %}
+            <li><a href="{{page.url}}" class="menu--change-on-hover"{% if page.footer_colour %} data-color="{{page.footer_colour }}"{% endif %}>{{page.title|safe}}</a></li>{% endfor %}
+          </ul>
+          <ul class="about">
+            <li><a href="/about/">About</a></li>{% for page in other_pages.all %}
+            <li><a href="{{page.url}}">{{page.title|safe}}</a></li>{% endfor %}
+          </ul>
+          <ul class="social-media">
+            <li><a href="https://www.instagram.com/Joanna.ham/" class="instagram" target="_blank">Instagram</a></li>
+            <li><a href="https://twitter.com/Joanna_ham_/" class="twitter" target="_blank">Twitter</a></li>
+            <li><a href="https://the-dots.com/users/joanna-ham-471690" class="thedots" target="_blank">The Dots</a></li>
+          </ul>
+        </div>
+      </div>
+      {# for later #}
+      {% block allcontent %}
+
+      <div class="container page-content">
+        <div class="content">
+            {% block page.title %}
+            {% endblock %}
+          <div id="basket" style="display:none;">
+              {% include 'home/cart.html' %}
+          </div>
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+      <div class="footer-wrapper container">
+        <div class="container">
+        <div class="content">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xs-12 col-sm-3">
+              <ul class="social-media">
+                <li><a href="https://www.instagram.com/Joanna.ham/" class="instagram" target="_blank">Instagram</a></li>
+                <li><a href="https://twitter.com/Joanna_ham_" class="twitter" target="_blank">Twitter</a></li>
+                <li><a href="https://the-dots.com/users/joanna-ham-471690" class="thedots" target="_blank">The Dots</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+              <div class="mail">
+                <a href="mailto:info@joannaham.com">
+                  Contact
+                </a>
+                <a href="/faq/">
+                  FAQs
+                </a>
+                <a href="http://eepurl.com/gBDleT">
+                  Subscribe to News
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <ul>
+                <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+                <li><a href="/cookies-and-privacy-policy/">Cookies and Privacy Policy</a></li>
+                <li>&copy; Joanna Ham 2019</li>
+              </ul>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    {% endblock %}
+
+    <div class="overlay-preload"></div>
+
+    <script type="text/javascript" src="{% static 'js/libs/jquery.cookiebar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/libs/imagesloaded.pkgd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/libs/isotope.pkgd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.json.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/csrf.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+
+    {% wagtailuserbar %}
+  </body>
+</html>
+
+
+

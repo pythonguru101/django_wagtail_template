@@ -1,0 +1,264 @@
+body.inverted .navigation {
+    .content {
+        background: none;
+    }
+    h1 a {
+        color: #fff;
+    }
+    .menu_trigger {
+        a {
+            background: url('../img/hamburger_white.svg');
+        }
+    }
+    .cart {
+        background: no-repeat center/100% url("../img/cart_mod3_white.svg");
+    }
+}
+.navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+    .content {
+        position: relative;
+        background-color: #fff;
+    }
+    h1 {
+        margin: 0;
+        padding: 30px 0 0 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 36px;
+        font-family:'AvenirNextLTW01-Medium';
+        @include breakpoint (mobile) {
+            font-size: 30px;
+        }
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    .menu_trigger {
+        position: absolute;
+        right: 0;
+        top: 38px;
+        @include breakpoint (mobile) {
+            top: 36px;
+        }
+        a {
+            text-indent: -1000em;
+            width: 40px;
+            height: 40px;
+            background: url('../img/hamburger.svg');
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            content: "";
+            display: block;
+            @include breakpoint (mobile) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s; 
+    }
+    .homepage-basket {
+        position: absolute;
+        left: 0px;
+        top: 34px;
+        @include breakpoint(mobile) {
+            top: 33px;
+        }
+        .cart {
+            background: no-repeat center/100% url("../img/cart_mod3.svg");
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            float: left;
+            @include breakpoint(mobile) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .cart-quantity {
+            font-size: 21px;
+            @include breakpoint(tablet) {
+                display: none;
+            }
+            float: left;
+            margin-top: 3px;
+            margin-left: 10px;
+        }
+    }
+}
+.navigation.shrink {
+    height: 100px;
+    h1 {
+        font-size: 30px;
+        @include breakpoint (mobile) {
+            font-size: 20px;
+        }
+        padding: 15px 0 10px 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .content {
+        border-bottom: 1px solid #000;
+    }
+    .menu_trigger {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        a {
+            text-indent: -1000em;
+            width: 30px;
+            height: 30px;
+            background: url('../img/hamburger.svg');
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            display: block;
+        }
+        @include breakpoint (mobile) {
+            width: 28px;
+            height: 28px;
+            top: 15px;
+            right: 10px;
+        }
+    }
+    .homepage-basket {
+        position: absolute;
+        left: 0px;
+        top: 20px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        @include breakpoint(mobile) {
+            top: 20px;
+        }
+        .cart {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            float: left;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            @include breakpoint(mobile) {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .cart-quantity {
+            font-size: 19px;
+            @include breakpoint(tablet) {
+                display: none;
+            }
+            float: left;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            margin-top: 3px;
+            margin-left: 10px;
+        }
+    }
+}
+.menu-container {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3000;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    .menu {
+        text-align: center;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -30%);
+        @include breakpoint (landscapetablet) {
+            width:100%;
+        }
+        
+        h2 {
+            margin: 0 0 80px 0;
+            @include breakpoint (landscapetablet) {
+                margin: 0 0 50px 0;
+            }
+        }
+        h3 {
+            margin: 0 0 0px 0;
+            font-size: 28px;
+            color: grey;
+            @include breakpoint (landscapetablet) {
+                margin: 0 0 0px 0;
+                font-size: 26px;
+            }
+            @include breakpoint (mobile) {
+                font-size: 22px;
+            }
+        }
+        h2 {
+            font-family:'AvenirNextLTW01-Medium';
+        }
+        h2, ul {
+            font-size: 36px;
+            @include breakpoint (landscapetablet) {
+                font-size: 34px;
+            }
+            @include breakpoint (mobile) {
+                font-size: 30px;
+            }
+            line-height: 1.4em;
+            a {
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            a:hover {
+                text-decoration: none;
+                color: $green;
+            }
+        }
+        ul {
+            list-style: none;
+            list-style-type: none;
+            margin: 0 0 30px 0;
+            @include breakpoint (mobile) {
+                margin: 0 0 25px 0;
+            }
+            padding: 0;
+        }
+        .social-media {
+            margin: 70px 0 0 0;
+            @include breakpoint (mobile) {
+                margin: 50px 0 0 0;
+            }
+            li {
+                display: inline;
+            }
+            a {
+                width: 25px;
+                height: 25px;
+                margin: 4px 0;
+            }
+        }
+    }
+}

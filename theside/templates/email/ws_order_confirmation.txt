@@ -1,0 +1,15 @@
+We have received a new order from {{order.billing_name}}.
+
+Customer Email: {{order.email}}
+{% comment %}Customer Tel: {{order.telephone}}{% endcomment %}
+
+Order details on the Admin:
+https://joannaham.com/admin/shop/shoporder/edit/{{order.pk}}/
+
+SUMMARY
+{% for order_item in order.order_items.all %}
+  {% if order_item.quantity > 1 %}{{ order_item.quantity }} x {% endif %}{{ order_item.product.title }}{% if order_item.attribute != '' %} ({{ order_item.attribute }}){% endif %} £{{ order_item.price | floatformat:-2 }}
+{%endfor%}
+
+Order Total: £{{order.order_total | floatformat:2}}
+Shipping cost charged: £{{order.shipping_charged | floatformat:2}}
